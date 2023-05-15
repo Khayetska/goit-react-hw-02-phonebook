@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import { Form } from './Form/Form';
 import { ContactsList } from './ContactsList/ContactsList';
 import { Finder } from './Finder/Finder';
+import { IoListCircleOutline } from 'react-icons/io5';
 
 export class App extends Component {
   state = {
@@ -63,13 +64,17 @@ export class App extends Component {
 
     return (
       <div className="conteiner">
-        <h1>Phonebook</h1>
+        <h1 className="mainTitle">
+          Ph
+          <IoListCircleOutline className="titleIcon" />
+          nebook
+        </h1>
         <Form onSubmit={this.addNewContact} />
 
-        <p>Find contacts by name</p>
+        <h3 className="finderTitle">Find contacts by name</h3>
         <Finder filter={filter} onChange={this.handleFilterChange} />
 
-        <h2>Contacts</h2>
+        <h2 className="contactsTitle">Contacts</h2>
         <ContactsList
           contacts={visibleContacts}
           onDelete={this.deleteContact}
