@@ -4,11 +4,12 @@ import css from './ContactsItem.module.css';
 
 export const ContactsItem = ({ contact, onDelete }) => {
   const { id, name, number } = contact;
+  const { contactsIcon, contactsItem, deleteBtn } = css;
   return (
-    <li className={css.contactsItem}>
-      <FaPhoneAlt className={css.contactsIcon} />
+    <li className={contactsItem}>
+      <FaPhoneAlt className={contactsIcon} />
       {name}: {number}
-      <button className={css.deleteBtn} onClick={() => onDelete(id)}>
+      <button className={deleteBtn} onClick={() => onDelete(id)}>
         Delete
       </button>
     </li>
